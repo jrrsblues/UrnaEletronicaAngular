@@ -1,0 +1,5 @@
+package com.cabecadevento.eleicoes2018.model;
+
+public class Votar {
+
+}

@@ -1,0 +1,5 @@
+package com.cabecadevento.eleicoes2018.modelo;
+
+public class Candidato {
+
+}

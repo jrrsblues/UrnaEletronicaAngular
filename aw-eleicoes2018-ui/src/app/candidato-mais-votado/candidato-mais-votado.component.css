@@ -1,0 +1,13 @@
+.maiusculo { 
+    text-transform: uppercase;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+#box{
+    width:200px;
+    height:50px;
+    background-color:#CCC;
+    border-radius: 10px;
+    text-align: center;
+}

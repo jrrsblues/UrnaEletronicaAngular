@@ -1,0 +1,5 @@
+<app-navbar></app-navbar>
+<p-growl></p-growl>
+<app-candidato-cadastro (cadastroSalva)="listagem.listar()"></app-candidato-cadastro>
+<app-candidato-listagem #listagem (enviaMensagem)="listagem.listar()"></app-candidato-listagem>
+<app-candidato-mais-votado></app-candidato-mais-votado>

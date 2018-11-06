@@ -1,0 +1,56 @@
+<form autocomplete="off" #frm="ngForm" (ngSubmit)="votar(frm)">
+ <div class="ui-g">
+  <div class="ui-g-12">
+    <p-table [value]="candidatos" responsive="true">
+      <ng-template pTemplate="caption">
+        Lista de Candidatos
+      </ng-template>
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nome Urna</th>
+          <th>Código</th>
+          <th>Número</th>
+          <th>Legenda</th>
+          <th>Candidato</th>
+          <th>Votos</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-candidato>
+        <tr>
+          <td><p-radioButton name="groupname" id="valor-{{candidato.id}}" value="{{candidato.id}}"
+            label="{{candidato.nomeurna}}" [(ngModel)]="voto.candidatoSelecionado"></p-radioButton></td>
+          <td>{{candidato.id}}</td>
+          <td>{{candidato.numero}}</td>
+          <td>{{candidato.partido}}</td>
+          <td>{{candidato.nome}}</td>
+          <td>{{candidato.votos}}</td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="6">Nenhum candidato cadastrado.</td>
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </div>
+ </div>
+
+ <div class="ui-g">
+    <div class="ui-g-12">
+     Meu candidato escolhido é: <input pInputText id="candidatoSelecionado" name="candidatoSelecionado" 
+     #candidatoSelecionado value="{{voto.candidatoSelecionado}}"/>
+    </div>
+  </div>
+
+  <div class="ui-g">
+    <div class="ui-g-1 ui-g-offset-11 ui-fluid">
+        <br />
+        <button pButton type="button" icon="pi pi-check" 
+            label="Votar" (click)="votar(frm)" [disabled]="candidatos.length === 0 || !candidatoSelecionado.value "></button>
+    </div>
+  </div>
+</form>

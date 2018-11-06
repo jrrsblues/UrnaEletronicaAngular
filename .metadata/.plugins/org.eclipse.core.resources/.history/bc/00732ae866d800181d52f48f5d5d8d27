@@ -1,0 +1,15 @@
+package com.cabecadevento.eleicoes2018.model;
+
+public class Votar {
+	
+	private String candidatoSelecionado;
+
+	public String getCandidatoSelecionado() {
+		return candidatoSelecionado;
+	}
+
+	public void setCandidatoSelecionado(String candidatoSelecionado) {
+		this.candidatoSelecionado = candidatoSelecionado;
+	}
+
+}

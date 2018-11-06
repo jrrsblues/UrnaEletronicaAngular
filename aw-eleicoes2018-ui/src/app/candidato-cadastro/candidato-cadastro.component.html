@@ -1,0 +1,34 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+    <h1>Cadastro de Candidatos</h1>
+  </div>
+</div>
+
+<form autocomplete="off" #frm="ngForm" (ngSubmit)="cadastrar(frm)">
+    <div class="ui-g">
+        <div class="ui-g-1 ui-fluid">
+            <label>Id</label>      
+            <input pInputText id="id" name="id" [(ngModel)]="candidato.id" required #id/>        
+        </div>
+        <div class="ui-g-1 ui-fluid">
+            <label>Número</label>      
+            <input pInputText id="numero" name="numero" [(ngModel)]="candidato.numero" required #numero/>        
+        </div>
+        <div class="ui-g-1 ui-fluid">
+            <label>Legenda</label>      
+            <input pInputText id="partido" name="partido" [(ngModel)]="candidato.partido" required #partido/>        
+        </div>
+        <div class="ui-g-2 ui-fluid">
+                <label>Nome na Urna</label>      
+                <input pInputText id="nomeurna" name="nomeurna" [(ngModel)]="candidato.nomeurna" required #nomeurna/>        
+            </div>  
+        <div class="ui-g-6 ui-fluid">
+            <label>Nome</label>      
+            <input pInputText id="nome" name="nome" [(ngModel)]="candidato.nome" required #nome/>        
+        </div>        
+        <div class="ui-g-1 ui-fluid">
+            <br>
+            <button pButton icon="pi pi-plus" label="Salvar" [disabled]="frm.invalid"></button>            
+        </div>
+    </div>
+</form>

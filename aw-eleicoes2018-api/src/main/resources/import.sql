@@ -1,0 +1,1 @@
+insert into candidato(id, numero, partido, nomeurna, nome, votos) Values(1, 30, 'Partido Novo', 'Amoêdo', 'João Dionisio Filgueira Barreto Amoêdo', 0)

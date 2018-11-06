@@ -1,0 +1,39 @@
+package com.cabecadevento.eleicoes2018.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cabecadevento.eleicoes2018.model.Candidato;
+import com.cabecadevento.eleicoes2018.model.Votar;
+import com.cabecadevento.eleicoes2018.repository.Candidatos;
+
+@Service
+public class CandidatoService {
+	
+	@Autowired
+	private Candidatos candidatos;
+	
+	@Autowired
+	private Candidato candidato;
+
+	
+	public Candidato cadastrar(Candidato candidato) {
+		return candidatos.save(candidato);
+	}
+	
+	public Optional<Candidato> votar(Votar votar) {
+		return candidatos.findById(votar.getCandidatoSelecionado());
+	}
+	
+	public String somarVoto(Candidato candidato) {
+		 String msg = "";
+ 		 int voto = candidato.getVotos();
+		 voto++;
+		 candidato.setVotos(voto);
+		 return msg;
+	}
+
+}
+	

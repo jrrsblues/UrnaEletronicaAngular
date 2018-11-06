@@ -1,0 +1,24 @@
+package com.cabecadevento.eleicoes2018.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cabecadevento.eleicoes2018.model.Candidato;
+import com.cabecadevento.eleicoes2018.repository.Candidatos;
+
+@Service
+public class CandidatoService {
+	
+	@Autowired
+	private Candidatos candidatos;
+	
+	
+	public Candidato cadastrar(Candidato candidato) {
+		
+		System.out.println(candidato.getId());
+		System.out.println(candidato.getNomeurna());
+		return candidatos.save(candidato);
+		
+	}
+
+}

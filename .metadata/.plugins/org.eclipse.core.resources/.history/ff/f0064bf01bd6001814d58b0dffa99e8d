@@ -1,0 +1,25 @@
+package com.cabecadevento.eleicoes2018.resource;
+
+
+@CrossOrigin("*")
+@RestController
+@RequestMapping("/candidatos")
+public class ClientesResources {
+
+	@Autowired
+	private Candidatos candidatos;
+	
+	@Autowired
+	private ClienteService clienteService;
+	
+	@GetMapping
+	public List<Candidato> listar(){
+		return candidatos.findAll();
+	}
+	
+	@PostMapping
+	public Cliente cadastrar(@RequestBody @Valid Cliente cliente) {
+		return clienteService.cadastrar(cliente);
+	}	
+	
+}
